@@ -1,8 +1,7 @@
-
-var person={
-  name:'',
-  age:0,
-  other:''
+var person = {
+  name: '',
+  age: 0,
+  other: ''
 }
 
 function doIt() {
@@ -21,24 +20,32 @@ function doIt() {
   // myMainTable.set('name','张三');
 
 
-
   myMainTable.save(person, {
-    success: function(object) {
+    success: function (object) {
       // alert("create object success, object id:"+object.id);
-      alert("提交成功");
+
+      var r = confirm("提交成功，是否继续录入？")
+      if (r == true) {
+
+      }
+      else {
+        window.location.href="about:blank";
+        window.close();
+      }
+
     },
-    error: function(model, error) {
+    error: function (model, error) {
       console.log(error)
-      alert("没成功，，，");
-      window.close()
+      alert("没成功，，，")
+
     }
   });
 }
 
 function getFormdata() {
-  person.name= $('#name').val()
-  person.age=parseInt($('#age').val())
-  person.other=$('#other').val()
+  person.name = $('#name').val()
+  person.age = parseInt($('#age').val())
+  person.other = $('#other').val()
 
 }
 
