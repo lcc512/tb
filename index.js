@@ -18,17 +18,19 @@ function doIt() {
   // var query = new Bmob.Query(myMainTable);
 
   // 添加数据
-  myMainTable.set('name','张三');
+  // myMainTable.set('name','张三');
 
 
 
   myMainTable.save(person, {
     success: function(object) {
-      alert("create object success, object id:"+object.id);
+      // alert("create object success, object id:"+object.id);
+      alert("提交成功");
     },
     error: function(model, error) {
       console.log(error)
-      alert("create object fail");
+      alert("没成功，，，");
+      window.close()
     }
   });
 }
